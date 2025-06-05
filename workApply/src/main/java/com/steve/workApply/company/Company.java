@@ -17,6 +17,7 @@ public class Company {
     private List<Job> jobs;
 
     // private List<Review> reviews;
+
     public Company() {
     }
 
