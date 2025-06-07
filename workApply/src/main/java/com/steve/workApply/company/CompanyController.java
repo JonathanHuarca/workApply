@@ -33,4 +33,13 @@ public class CompanyController {
         companyService.createCompany(company);
         return new ResponseEntity<>("Company added successfully", HttpStatus.CREATED);
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteCompany(@PathVariable Long id) {
+        boolean isDelete = companyService.deleteCompanyById(id);
+        if (isDelete){
+            return new ResponseEntity<>("Company deleted successfully", HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
